@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'logout' %}">Log out</a>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Rate</th>
+        </tr>
+        <tr>
+            <td>{{course.title}}</td>
+            <td>{{course.description}}</td>
+            <td>{{course.rate|floatformat:2}}</td>
+        </tr>
+    </table>
+    <a href="/course/{{course.id}}/rate"><button>Rate</button></a>
+</body>
+</html>

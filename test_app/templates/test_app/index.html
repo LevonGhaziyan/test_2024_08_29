@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'logout' %}">Log out</a>
+    {% if courses %}
+    {% for course in courses %}
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Rate</th>
+        </tr>
+        <tr>
+            <td><a href="/course/{{course.id}}">{{course.title}}</a></td>
+            <td>{{course.rate}}</td>
+        </tr>
+    </table>
+    {% endfor %}
+    {% else %}
+    <p>There aren't any course in database!!</p>
+    {% endif %}
+</body>
+</html>

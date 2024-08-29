@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="{% url 'logout' %}">Log out</a>
+    <form action="/course/{{course.id}}/rate" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <label for="rate"><h1>Please rate course {{course.title}}</h1></label>
+            <input type="number" id="rate" name="rate">
+        </fieldset>
+        <input type="submit" value="Rate">
+    </form>
+</body>
+
+</html>
